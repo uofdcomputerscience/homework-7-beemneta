@@ -16,7 +16,7 @@ import Foundation
 // Remember that this structure needs to conform to the `Encodable` protocol.
 // Using `Codable` more generally will be useful, as by doing this you'll
 // be able to reuse this struct in Project Three.
-struct book: Codable {
+struct Book: Codable {
     let id: Int?
     let title: String
     let author: String
@@ -30,11 +30,11 @@ struct book: Codable {
 // book objects that you can insert into the database. In order or us to
 // have an amusing dataset to work with, each student is requested to
 // create five different books for this database.
-let bookone = book (id:nil,title:"The Last Lecture", author: "Randy Pausch", published: "2008", imageURLString: "https://upload.wikimedia.org/wikipedia/en/1/18/The_Last_Lecture_%28book_cover%29.jpg")
-let booktwo = book (id:nil,title: "A Christmas Carol", author: "Charles Dickens", published: "1843", imageURLString: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Charles_Dickens-A_Christmas_Carol-Cloth-First_Edition_1843.jpg/800px-Charles_Dickens-A_Christmas_Carol-Cloth-First_Edition_1843.jpg")
-let bookthree = book (id:nil,title: "The Herb Book", author: "John Lust", published: "1974", imageURLString: "https://d2h1pu99sxkfvn.cloudfront.net/b0/3517278/429209217_NCpE35gwa1/P0.jpg")
-let bookfour = book (id:nil,title: "Technopoly", author: "Neil Postman", published: "1992", imageURLString: "https://upload.wikimedia.org/wikipedia/en/5/58/Technopoly_The_Surrender_of_Culture_to_Technology.jpg")
-let bookfive = book (id:nil,title: "Disgrace", author: "John Maxwell Coetzee", published: "1999", imageURLString: "https://upload.wikimedia.org/wikipedia/en/3/3d/JMCoetzee_Disgrace.jpg")
+let bookone = Book (id:nil,title:"The Last Lecture", author: "Randy Pausch", published: "2008", imageURLString: "https://upload.wikimedia.org/wikipedia/en/1/18/The_Last_Lecture_%28book_cover%29.jpg")
+let booktwo = Book (id:nil,title: "A Christmas Carol", author: "Charles Dickens", published: "1843", imageURLString: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Charles_Dickens-A_Christmas_Carol-Cloth-First_Edition_1843.jpg/800px-Charles_Dickens-A_Christmas_Carol-Cloth-First_Edition_1843.jpg")
+let bookthree = Book (id:nil,title: "The Herb Book", author: "John Lust", published: "1974", imageURLString: "https://d2h1pu99sxkfvn.cloudfront.net/b0/3517278/429209217_NCpE35gwa1/P0.jpg")
+let bookfour = Book (id:nil,title: "Technopoly", author: "Neil Postman", published: "1992", imageURLString: "https://upload.wikimedia.org/wikipedia/en/5/58/Technopoly_The_Surrender_of_Culture_to_Technology.jpg")
+let bookfive = Book (id:nil,title: "Disgrace", author: "John Maxwell Coetzee", published: "1999", imageURLString: "https://upload.wikimedia.org/wikipedia/en/3/3d/JMCoetzee_Disgrace.jpg")
 
 
 // MARK: - STEP THREE
@@ -60,7 +60,7 @@ let bookfive = book (id:nil,title: "Disgrace", author: "John Maxwell Coetzee", p
 let urlString = "https://uofd-tldrserver-develop.vapor.cloud/books"
 let url = URL(string: urlString)!
 
-func postBook (book: book){
+func postBook (book: Book){
 var request = URLRequest(url: url)
 request.httpBody = try? JSONEncoder().encode(book)
 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
