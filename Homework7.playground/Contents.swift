@@ -17,10 +17,11 @@ import Foundation
 // Using `Codable` more generally will be useful, as by doing this you'll
 // be able to reuse this struct in Project Three.
 struct book: Codable {
+    let id: Int?
     let title: String
     let author: String
-    let publication_year: String
-    let url: String
+    let published: String
+    let imageURLString: String
 }
 
 // MARK: - STEP TWO
@@ -29,11 +30,11 @@ struct book: Codable {
 // book objects that you can insert into the database. In order or us to
 // have an amusing dataset to work with, each student is requested to
 // create five different books for this database.
-let bookone = book (title:"The Last Lecture", author: "Randy Pausch", publication_year: "2008", url: "https://upload.wikimedia.org/wikipedia/en/1/18/The_Last_Lecture_%28book_cover%29.jpg")
-let booktwo = book (title: "A Christmas Carol", author: "Charles Dickens", publication_year: "1843", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Charles_Dickens-A_Christmas_Carol-Cloth-First_Edition_1843.jpg/800px-Charles_Dickens-A_Christmas_Carol-Cloth-First_Edition_1843.jpg")
-let bookthree = book (title: "The Herb Book", author: "John Lust", publication_year: "1974", url: "https://d2h1pu99sxkfvn.cloudfront.net/b0/3517278/429209217_NCpE35gwa1/P0.jpg")
-let bookfour = book (title: "Technopoly", author: "Neil Postman", publication_year: "1992", url: "https://upload.wikimedia.org/wikipedia/en/5/58/Technopoly_The_Surrender_of_Culture_to_Technology.jpg")
-let bookfive = book (title: "Disgrace", author: "John Maxwell Coetzee", publication_year: "1999", url: "https://upload.wikimedia.org/wikipedia/en/3/3d/JMCoetzee_Disgrace.jpg")
+let bookone = book (id:nil,title:"The Last Lecture", author: "Randy Pausch", published: "2008", imageURLString: "https://upload.wikimedia.org/wikipedia/en/1/18/The_Last_Lecture_%28book_cover%29.jpg")
+let booktwo = book (id:nil,title: "A Christmas Carol", author: "Charles Dickens", published: "1843", imageURLString: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Charles_Dickens-A_Christmas_Carol-Cloth-First_Edition_1843.jpg/800px-Charles_Dickens-A_Christmas_Carol-Cloth-First_Edition_1843.jpg")
+let bookthree = book (id:nil,title: "The Herb Book", author: "John Lust", published: "1974", imageURLString: "https://d2h1pu99sxkfvn.cloudfront.net/b0/3517278/429209217_NCpE35gwa1/P0.jpg")
+let bookfour = book (id:nil,title: "Technopoly", author: "Neil Postman", published: "1992", imageURLString: "https://upload.wikimedia.org/wikipedia/en/5/58/Technopoly_The_Surrender_of_Culture_to_Technology.jpg")
+let bookfive = book (id:nil,title: "Disgrace", author: "John Maxwell Coetzee", published: "1999", imageURLString: "https://upload.wikimedia.org/wikipedia/en/3/3d/JMCoetzee_Disgrace.jpg")
 
 
 // MARK: - STEP THREE
